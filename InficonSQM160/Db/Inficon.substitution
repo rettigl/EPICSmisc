@@ -1,0 +1,6 @@
+file "db/Inficon.db" {
+ pattern
+  {  NAME, PTCOLS, PORT }
+  { "IOC:Inficon", "InficonSQM160.proto", "$(PORT_INFICON)", }
+}
+

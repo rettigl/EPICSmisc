@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <width>790</width>
+  <height>850</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Inficon Quartz Balance</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>IOC Path: </text>
+    <y>25</y>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Settings</name>
+    <x>290</x>
+    <y>10</y>
+    <width>240</width>
+    <height>110</height>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Film Name: </text>
+      <x>2</x>
+      <y>-3</y>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>$(NAME):Film</pv_name>
+      <x>100</x>
+      <format>6</format>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>$(NAME):Density</pv_name>
+      <x>100</x>
+      <y>20</y>
+      <format>1</format>
+      <precision>2</precision>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>Density: </text>
+      <x>2</x>
+      <y>20</y>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>$(NAME):Z-ratio</pv_name>
+      <x>100</x>
+      <y>40</y>
+      <format>1</format>
+      <precision>2</precision>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>Z-Ratio: </text>
+      <x>2</x>
+      <y>40</y>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>$(NAME):ToolingFactor</pv_name>
+      <x>100</x>
+      <y>60</y>
+      <format>1</format>
+      <precision>1</precision>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>Tooling Factor: </text>
+      <x>2</x>
+      <y>60</y>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Values</name>
+    <x>530</x>
+    <y>10</y>
+    <width>240</width>
+    <height>110</height>
+    <widget type="label" version="2.0.0">
+      <name>Label_6</name>
+      <text>Current Rate</text>
+      <x>2</x>
+      <y>60</y>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_5</name>
+      <pv_name>$(NAME):Rate</pv_name>
+      <x>100</x>
+      <y>60</y>
+      <format>1</format>
+      <precision>5</precision>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_6</name>
+      <pv_name>$(NAME):Thickness</pv_name>
+      <x>100</x>
+      <y>3</y>
+      <format>1</format>
+      <precision>5</precision>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>Thickness: </text>
+      <x>2</x>
+      <y>3</y>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_8</name>
+      <pv_name>$(NAME):Runtime</pv_name>
+      <x>100</x>
+      <y>23</y>
+      <format>1</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>Runtime</text>
+      <x>2</x>
+      <y>23</y>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>Mean Rate</text>
+      <x>2</x>
+      <y>43</y>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_9</name>
+      <pv_name>$(NAME):MeanRate</pv_name>
+      <x>100</x>
+      <y>43</y>
+      <format>1</format>
+      <precision>5</precision>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(NAME):Zero</pv_name>
+        <value>0</value>
+        <description>WritePV</description>
+      </action>
+    </actions>
+    <text>Reset</text>
+    <x>550</x>
+    <y>120</y>
+    <width>90</width>
+    <height>20</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_7</name>
+    <pv_name>$(NAME):Frequency</pv_name>
+    <x>98</x>
+    <y>45</y>
+    <width>172</width>
+    <format>1</format>
+    <precision>5</precision>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Frequency: </text>
+    <y>45</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED (Multi State)</name>
+    <pv_name>$(NAME):Shutter_RBV</pv_name>
+    <x>390</x>
+    <y>120</y>
+    <width>130</width>
+    <off_label>Closed</off_label>
+    <off_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <on_label>Open</on_label>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>Shutter</text>
+    <x>323</x>
+    <y>120</y>
+  </widget>
+  <widget type="stripchart" version="2.0.0">
+    <name>Strip Chart</name>
+    <x>10</x>
+    <y>150</y>
+    <width>780</width>
+    <height>340</height>
+    <time_range>10 minute</time_range>
+    <y_axes>
+      <y_axis>
+        <title>Thickness</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <visible>true</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <y_pv>$(NAME):Thickness</y_pv>
+        <axis>1</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="stripchart" version="2.0.0">
+    <name>Strip Chart_1</name>
+    <y>490</y>
+    <width>790</width>
+    <height>360</height>
+    <time_range>10 minute</time_range>
+    <y_axes>
+      <y_axis>
+        <title>Rate</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <visible>true</visible>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <y_pv>$(NAME):Rate</y_pv>
+        <axis>1</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color name="MAJOR" red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[1].y_pv)</name>
+        <y_pv>$(NAME):MeanRate</y_pv>
+        <axis>1</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="60" green="160" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>$(NAME)</text>
+    <x>80</x>
+    <y>25</y>
+    <width>170</width>
+  </widget>
+</display>
