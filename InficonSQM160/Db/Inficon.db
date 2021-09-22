@@ -84,6 +84,7 @@ record (bo, "$(NAME):Zero")
 {
     field (DTYP, "stream")
     field (OUT,  "@$(PTCOLS) set_zero $(PORT)")
+    field (FLNK, "$(NAME):ThicknessRawOff")
 }
 
 record (ai, "$(NAME):_starttime")
@@ -98,6 +99,39 @@ record (ai, "$(NAME):_currtime")
     field (TSEL, "$(NAME):Thickness.TIME")
 }
 
+record (calc, "$(NAME):_K1")
+{
+    #field (EGU, "Ang")
+    field (INPA, "$(NAME):Density")
+    field (INPB, "$(NAME):Z-ratio")
+    field (INPC, "$(NAME):ToolingFactor")
+    field (CALC, "C/100*1.668E13*2.648/(PI*A*B)")
+}
+
+record (calc, "$(NAME):_K2")
+{
+    #field (EGU, "Ang")
+    field (CALC, "PI/(6E6+5E4)")
+}
+
+record (ai, "$(NAME):ThicknessRawOff")
+{
+    field (EGU, "Ang")
+    field (INP, "$(NAME):ThicknessRaw.VAL")
+    field (SCAN, "Passive")
+}
+
+record (calc, "$(NAME):ThicknessRaw")
+{
+    field (EGU, "Ang")
+    field (PREC, "5") 
+    field (INPA, "$(NAME):Frequency")
+    field (INPB, "$(NAME):ThicknessRawOff")
+    field (INPC, "$(NAME):Z-ratio")
+    field (INPD, "$(NAME):_K1 PP MS")
+    field (INPE, "$(NAME):_K2 PP MS")
+    field (CALC, "ATAN(C*TAN(PI-E*A))*D/A-B")
+}
 
 record (calc, "$(NAME):Runtime")
 {
@@ -113,5 +147,6 @@ record (calc, "$(NAME):MeanRate")
     field (INPA, "$(NAME):Thickness")
     field (INPB, "$(NAME):Runtime PP MS")
     field (CALC, "1000*A/B")
+    field (FLNK, "$(NAME):ThicknessRaw")
 }
 
